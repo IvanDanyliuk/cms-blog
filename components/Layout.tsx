@@ -1,9 +1,7 @@
 import React from 'react';
+import { ILayout } from '../types';
 import { Header } from './';
 
-interface ILayout {
-  children: React.ReactNode;
-};
 
 const Layout: React.FC<ILayout> = ({ children }) => {
   return (

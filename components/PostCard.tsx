@@ -1,11 +1,6 @@
 import React from 'react';
+import { IPostCard } from '../types';
 
-interface IPostCard {
-  post: {
-    title: string;
-    excerpt: string;
-  }
-};
 
 const PostCard: React.FC<IPostCard> = ({ post }) => {
   return (
