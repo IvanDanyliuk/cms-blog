@@ -10,9 +10,26 @@ export interface ILayout {
   children: React.ReactNode;
 };
 
-export interface IPostCard {
+export interface IPost {
   post: {
-    title: string;
+    author: {
+      bio: string;
+      id: string;
+      name: string;
+      photo: {
+        url: string;
+      }
+    };
+    categories: {
+      name: string;
+      slug: string;
+    }[];
+    createdAt: string;
     excerpt: string;
+    featuredImage: {
+      url: string;
+    };
+    slug: string;
+    title: string;
   }
 };
