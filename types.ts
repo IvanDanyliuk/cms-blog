@@ -33,3 +33,20 @@ export interface IPost {
     title: string;
   }
 };
+
+export interface IPostWidgetData {
+  categories?: {
+    name: string;
+    slug: string;
+  }[];
+  slug?: string;
+}
+
+export interface IWidgetPostItem {
+  createdAt: string;
+  featuredImage: {
+    url: string;
+  };
+  slug: string;
+  title: string;
+}
