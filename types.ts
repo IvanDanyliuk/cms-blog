@@ -1,3 +1,5 @@
+import { GraphQLAbstractType, GraphQLInterfaceType } from "graphql";
+
 //pages
 export interface IHome {
   posts: any[];
@@ -13,18 +15,20 @@ export interface ILayout {
 export interface ICategory {
   name: string;
   slug: string;
-}
+};
+
+export interface IAuthor {
+  bio: string;
+  id: string;
+  name: string;
+  photo: {
+    url: string;
+  }
+};
 
 export interface IPost {
   post: {
-    author: {
-      bio: string;
-      id: string;
-      name: string;
-      photo: {
-        url: string;
-      }
-    };
+    author: IAuthor;
     categories: ICategory[];
     createdAt: string;
     excerpt: string;
@@ -33,11 +37,14 @@ export interface IPost {
     };
     slug: string;
     title: string;
+    content?: {
+      raw: any;
+    }
   }
 };
 
 export interface IPostWidgetData {
-  categories?: ICategory[];
+  categories?: ICategory[] | string[];
   slug?: string;
 }
 
