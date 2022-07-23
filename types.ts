@@ -10,6 +10,11 @@ export interface ILayout {
   children: React.ReactNode;
 };
 
+export interface ICategory {
+  name: string;
+  slug: string;
+}
+
 export interface IPost {
   post: {
     author: {
@@ -20,10 +25,7 @@ export interface IPost {
         url: string;
       }
     };
-    categories: {
-      name: string;
-      slug: string;
-    }[];
+    categories: ICategory[];
     createdAt: string;
     excerpt: string;
     featuredImage: {
@@ -35,10 +37,7 @@ export interface IPost {
 };
 
 export interface IPostWidgetData {
-  categories?: {
-    name: string;
-    slug: string;
-  }[];
+  categories?: ICategory[];
   slug?: string;
 }
 
