@@ -19,7 +19,7 @@ export interface ICategory {
 
 export interface IAuthor {
   bio: string;
-  id: string;
+  id?: string;
   name: string;
   photo: {
     url: string;

@@ -4,7 +4,7 @@ import { IPost } from '../types';
 
 
 const PostDetail: React.FC<IPost> = ({ post }) => {
-  const getContentFragment = (index, text, obj, type) => {
+  const getContentFragment = (index: number, text: any, obj: any, type?: any) => {
     let modifiedText = text;
 
     if (obj) {
