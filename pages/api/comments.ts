@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
-import { CommentData } from '../../types';
 
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
@@ -8,7 +7,7 @@ const graphcmsToken = process.env.GRAPHCMS_TOKEN;
 
 export default async function comments(
   req: NextApiRequest,
-  res: NextApiResponse<CommentData>
+  res: NextApiResponse
 ) {
   const graphQLClient = new GraphQLClient(graphqlAPI!, {
     headers: {

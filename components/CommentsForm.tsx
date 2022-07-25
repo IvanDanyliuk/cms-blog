@@ -8,10 +8,10 @@ const CommentsForm: React.FC<ICommentsForm> = ({ slug }) => {
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const commentEl = useRef<HTMLTextAreaElement>(null);
-  const nameEl = useRef<HTMLInputElement>(null);
-  const emailEl = useRef<HTMLInputElement>(null);
-  const storeDataEl = useRef(null);
+  const commentEl = useRef<any>(null);
+  const nameEl = useRef<any>(null);
+  const emailEl = useRef<any>(null);
+  const storeDataEl = useRef<any>(null);
 
   useEffect(() => {
     nameEl.current.value = window.localStorage.getItem('name');

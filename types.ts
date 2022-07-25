@@ -60,6 +60,12 @@ export interface IPost {
   }
 };
 
+export interface ICategoryPost {
+  posts: {
+    node: IPost;
+  }[];
+}
+
 export interface IPostWidgetData {
   categories?: ICategory[] | string[];
   slug?: string;
@@ -72,12 +78,28 @@ export interface IWidgetPostItem {
   };
   slug: string;
   title: string;
-}
-
-
-export type CommentData = {
-  name: string;
-  createdAt: string;
-  comment: string;
 };
 
+export type PostStaticPaths = {
+  node: {
+    author: {
+      bio: string;
+      id?: string;
+      name: string;
+      photo: {
+        url: string;
+      }
+    };
+    categories: ICategory[];
+    createdAt: string;
+    excerpt: string;
+    featuredImage: {
+      url: string;
+    };
+    slug: string;
+    title: string;
+    content?: {
+      raw: any;
+    }
+  }
+};

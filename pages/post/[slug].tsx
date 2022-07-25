@@ -2,7 +2,7 @@ import React from 'react';
 import { getPosts, getPostDetails } from '../../services';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm } from '../../components';
 import { NextPage } from 'next';
-import { IPost } from '../../types';
+import { IPost, PostStaticPaths } from '../../types';
 
 const PostDetails: NextPage<IPost> = ({ post }) => {
   return (
@@ -27,7 +27,7 @@ const PostDetails: NextPage<IPost> = ({ post }) => {
 
 export default PostDetails;
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
   const data = await getPostDetails(params.slug)
   
   return {
@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
   const posts = await getPosts();
 
   return {
-    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+    paths: posts.map(({ node: { slug } }: PostStaticPaths) => ({ params: { slug } })),
     fallback: false,
-  }
-}
+  };
+};
