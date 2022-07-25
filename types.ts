@@ -18,17 +18,34 @@ export interface ICategory {
 };
 
 export interface IAuthor {
-  bio: string;
-  id?: string;
-  name: string;
-  photo: {
-    url: string;
+  author: {
+    bio: string;
+    id?: string;
+    name: string;
+    photo: {
+      url: string;
+    }
   }
+};
+
+export interface ICommentsForm {
+  slug: string;
+};
+
+export interface IComments {
+  slug: string;
 };
 
 export interface IPost {
   post: {
-    author: IAuthor;
+    author: {
+      bio: string;
+      id?: string;
+      name: string;
+      photo: {
+        url: string;
+      }
+    };
     categories: ICategory[];
     createdAt: string;
     excerpt: string;
@@ -56,3 +73,11 @@ export interface IWidgetPostItem {
   slug: string;
   title: string;
 }
+
+
+export type CommentData = {
+  name: string;
+  createdAt: string;
+  comment: string;
+};
+
